@@ -307,7 +307,7 @@ static size_t autostart_len;
 static char*
 getWallpaperPath() {
   char *homePath = getenv("HOME");
-  if(!home) return;
+  if(!homePath) return "";
 
   // Check for Wallpaper dir in Home
   char *dirs[] = {"wallpapers", "Wallpapers", "wallpaper", "Wallpaper"};
@@ -317,7 +317,7 @@ getWallpaperPath() {
     snprintf(path, sizeof(path), "%s/%s", home, dirs[i]);
 
     if(syscall(21, path, 0) == 0)
-      return path;
+      return *path;
   }
 }
 
