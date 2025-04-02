@@ -249,7 +249,6 @@ static int xerrordummy(Display *dpy, XErrorEvent *ee);
 static int xerrorstart(Display *dpy, XErrorEvent *ee);
 static void zoom(const Arg *arg);
 static void autostart_exec(void);
-static const char* getWallpaperPath();
 
 static pid_t getparentprocess(pid_t p);
 static int isdescprocess(pid_t p, pid_t c);
@@ -302,24 +301,6 @@ struct NumTags { char limitexceeded[LENGTH(tags) > 31 ? -1 : 1]; };
 /* dwm will keep pid's of processes from autostart array and kill them at quit */
 static pid_t *autostart_pids;
 static size_t autostart_len;
-
-/* Get Home dir Path of User */ 
-static const char*
-getWallpaperPath() {
-  char *homePath = getenv("HOME");
-  if(!homePath) return "";
-
-  // Check for Wallpaper dir in Home
-  char *dirs[] = {"wallpapers", "Wallpapers", "wallpaper", "Wallpaper"};
-  char path[256];
-
-  for(int i = 0; i < 4; i++) {
-    snprintf(path, sizeof(path), "%s/%s", homePath, dirs[i]);
-
-    if(syscall(21, path, 0) == 0)
-      return *path;
-  }
-}
 
 /* execute command from autostart array */
 static void

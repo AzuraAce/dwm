@@ -24,9 +24,8 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
-static const char* wallpaperDirPath = getWallpaperPath();
 static const char *const autostart[] = {
-	"feh", "--bg-fill -z", wallpaperDirPath,
+	"feh", "--bg-fill -z", "/home/oliver/wallpapers/akame_ga_kill-15.jpg",
 	NULL /* terminate */
 };
 
