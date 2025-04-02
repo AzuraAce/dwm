@@ -2,6 +2,12 @@ dwm - dynamic window manager
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
 
+Usage
+------------
+WinKey + Shift + Enter = spawn st 
+WinKey + j/k           = move between windows
+WinKey + Shift + j/k   = move windows
+WinKey + d             = spawn dmenu
 
 Requirements
 ------------
