@@ -25,7 +25,7 @@ static const char *colors[][3]      = {
 };
 
 static const char *const autostart[] = {
-	"feh", "--bg-fill", "$HOME/wallpapers/",
+	"feh", "--bg-fill -z", getWallpaperPath(),
 	NULL /* terminate */
 };
 
