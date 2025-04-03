@@ -91,8 +91,14 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
+
 static const char *upbrightness[]   = { "/home/oliver/scripts/dwm/dwm-brightness", "up", NULL };
 static const char *downbrightness[] = { "/home/oliver/scripts/dwm/dwm-brightness", "down", NULL };
+
+static const char *downvolume[] = { "/home/oliver/scripts/dwm/dwm-volume", "down", NULL };
+static const char *upvolume[] = { "/home/oliver/scripts/dwm/dwm-volume", "up", NULL };
+static const char *mutevolume[] = { "/home/oliver/scripts/dwm/dwm-volume", "toggle", NULL };
+static const char *mutemic[] = { "/home/oliver/scripts/dwm/dwm-volume", "mic-toggle", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -152,6 +158,10 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_c,      quit,           {0} },
 	{ 0,            XF86XK_MonBrightnessUp,    spawn,          {.v = upbrightness } },
 	{ 0,            XF86XK_MonBrightnessDown,  spawn,          {.v = downbrightness } },
+	{ 0,            XF86XK_AudioRaiseVolume,   spawn,          {.v = upvolume } },
+	{ 0,            XF86XK_AudioLowerVolume,   spawn,          {.v = downvolume } },
+	{ 0,            XF86XK_AudioMute,          spawn,          {.v = mutevolume } },
+	{ 0,            XF86XK_AudioMicMute,       spawn,          {.v = mutemic } },
 };
 
 /* button definitions */
