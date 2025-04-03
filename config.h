@@ -25,7 +25,7 @@ static const char *colors[][3]      = {
 };
 
 static const char *const autostart[] = {
-	"feh", "--bg-fill", "-z", "/home/oliver/wallpapers/akame_ga_kill-15.jpg", NULL,
+	"feh", "--bg-fill", "-z", "/home/oliver/wallpapers/2014465.webp", NULL,
   "dwmblocks", NULL,
 	NULL /* terminate */
 };
