@@ -25,7 +25,8 @@ static const char *colors[][3]      = {
 };
 
 static const char *const autostart[] = {
-	"feh", "--bg-fill", "-z", "~/wallpapers/akame_ga_kill-15.jpg",
+	"feh", "--bg-fill", "-z", "/home/oliver/wallpapers/akame_ga_kill-15.jpg", NULL
+  "dwmblocks", NULL
 	NULL /* terminate */
 };
 
@@ -90,8 +91,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *upbrightness[]   = { "~/scripts/dwm/dwm-brightness", "up", NULL };
-static const char *downbrightness[] = { "~/scripts/dwm/dwm-brightness", "down", NULL };
+static const char *upbrightness[]   = { "/home/oliver/scripts/dwm/dwm-brightness", "up", NULL };
+static const char *downbrightness[] = { "/home/oliver/scripts/dwm/dwm-brightness", "down", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
