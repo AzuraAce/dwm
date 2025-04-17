@@ -25,7 +25,6 @@ static const char *colors[][3]      = {
 };
 
 static const char *const autostart[] = {
-	"gentoo-pipewire-launcher", "&", NULL,
 	"picom", "--daemon", "--backend", "glx", NULL,
 	"feh", "--bg-fill", "-z", "/home/oliver/wallpapers/2014465.webp", NULL,
 	"dwmblocks", NULL,
