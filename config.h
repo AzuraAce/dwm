@@ -101,7 +101,7 @@ static const char *upvolume[] = { "/home/oliver/scripts/dwm/dwm-volume", "up", N
 static const char *mutevolume[] = { "/home/oliver/scripts/dwm/dwm-volume", "toggle", NULL };
 static const char *mutemic[] = { "/home/oliver/scripts/dwm/dwm-volume", "mic-toggle", NULL };
 
-static const char *screenshot[] = { "maim", "-s", "~/screenshots/$(date +%d-%m-%Y_$H:%M:%S_screenshot).png", NULL };
+static const char *screenshot[] = { "/bin/sh", "-c", "maim -s /home/oliver/screenshots/$(date +%d-%m-%Y_%H:%M:%S)_screenshot.png", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
