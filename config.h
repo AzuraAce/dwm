@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
@@ -25,7 +25,7 @@ static const char *colors[][3]      = {
 };
 
 static const char *const autostart[] = {
-	"picom", "--daemon", "--backend", "glx", NULL,
+	"picom", "--daemon", "--backend", "xrender", NULL,
 	"feh", "--bg-fill", "-z", "/home/oliver/wallpapers/2014465.webp", NULL,
 	"dwmblocks", NULL,
 	NULL /* terminate */
@@ -41,8 +41,10 @@ static const Rule rules[] = {
 	 */
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ "firefox", NULL,     NULL,           1 << 0,    0,          0,          -1,        -1 },
+	{ "st-256color", NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ "zen",     NULL,     NULL,           1 << 0,    0,          0,          -1,        -1 },
+	{ "Spotify", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
