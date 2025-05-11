@@ -7,7 +7,9 @@ Usage
 WinKey + Shift + Enter = spawn st 
 WinKey + j/k           = move between windows
 WinKey + Shift + j/k   = move windows
-WinKey + d             = spawn dmenu
+WinKey + d             = spawn rofi (drun)
+WinKey + p             = spawn dmenu
+WinKey + o             = xdg-open selected text (i.e. open url in browser)
 
 Requirements
 ------------
