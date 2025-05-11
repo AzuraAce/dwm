@@ -1,9 +1,9 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 4;        /* border pixel of windows */
+static const unsigned int borderpx  = 6;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
+static const int swallowfloating    = 1;        /* 1 means swallow floating windows by default */
 static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
@@ -17,7 +17,7 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_cyan[]        = "#54487A";// "#005577";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -25,8 +25,9 @@ static const char *colors[][3]      = {
 };
 
 static const char *const autostart[] = {
-	"picom", "--daemon", "--backend", "xrender", NULL,
-	"feh", "--bg-fill", "-z", "/home/oliver/wallpapers/2014465.webp", NULL,
+	"xautolock", "-time", "5", "-locker", "xset dpms force off && slock", "-detectsleep", "-corners", "'++--'", "-cornerdelay", "5", "-notify", "5", "-notifier", "/home/oliver/scripts/slock/lock-screen-noti.sh", NULL,
+	"picom", NULL,
+	"feh", "--bg-fill", "-z", "/home/oliver/wallpapers/gdCUUnB.jpeg", NULL,
 	"dwmblocks", NULL,
 	NULL /* terminate */
 };
@@ -45,6 +46,7 @@ static const Rule rules[] = {
 	{ "st-256color", NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ "zen",     NULL,     NULL,           1 << 0,    0,          0,          -1,        -1 },
 	{ "Spotify", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
+	{ "Vivaldi-stable",  NULL,     NULL,           1 << 0,    0,          0,          -1,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
@@ -92,6 +94,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+static const char *rofi[] = { "rofi", "-show", "drun", NULL };
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", NULL };
 
@@ -105,9 +108,12 @@ static const char *mutemic[] = { "/home/oliver/scripts/dwm/dwm-volume", "mic-tog
 
 static const char *screenshot[] = { "/bin/sh", "-c", "maim -s /home/oliver/screenshots/$(date +%d-%m-%Y_%H:%M:%S)_screenshot.png", NULL };
 
+static const char *xdg_open_primary[] = { "xdg-open-primary", NULL };
+
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_d,      spawn,          {.v = rofi } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -116,8 +122,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_u,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY,                       XK_o,      spawn,          {.v = xdg_open_primary} },
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
-  { MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_h,      setcfact,       {.f = +0.25} },
 	{ MODKEY|ShiftMask,             XK_l,      setcfact,       {.f = -0.25} },
 	{ MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
