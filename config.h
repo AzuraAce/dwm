@@ -43,7 +43,7 @@ static const Rule rules[] = {
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "firefox", NULL,     NULL,           1 << 0,    0,          0,          -1,        -1 },
-	{ "st-256color", NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ "St", NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ "zen",     NULL,     NULL,           1 << 0,    0,          0,          -1,        -1 },
 	{ "Spotify", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "Vivaldi-stable",  NULL,     NULL,           1 << 0,    0,          0,          -1,        -1 },
@@ -94,7 +94,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *rofi[] = { "rofi", "-show", "drun", NULL };
+static const char *dmenudesktop[] = { "dmenu_desktop", NULL };
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", NULL };
 
@@ -112,7 +112,7 @@ static const char *xdg_open_primary[] = { "xdg-open-primary", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_d,      spawn,          {.v = rofi } },
+	{ MODKEY,                       XK_d,      spawn,          {.v = dmenudesktop } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
