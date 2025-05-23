@@ -173,7 +173,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_c,      quit,           {0} },
 	{ MODKEY,                       XK_x,      spawn,          {.v = bitwarden} },
-	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = shutdown} },
+	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = shutdown} },
 	{ 0,            XF86XK_MonBrightnessUp,    spawn,          {.v = upbrightness } },
 	{ 0,            XF86XK_MonBrightnessDown,  spawn,          {.v = downbrightness } },
 	{ 0,            XF86XK_AudioRaiseVolume,   spawn,          {.v = upvolume } },
