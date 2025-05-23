@@ -98,10 +98,6 @@ static const char *dmenudesktop[] = { "dmenu_desktop", NULL };
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", NULL };
 
-static const char *displaysel[]  = { "/home/oliver/scripts/dmenu/displayselect", NULL };
-static const char *shutdown[]  = { "/home/oliver/scripts/dmenu/prompt", "Do you want to shutdown?", "shutdown -h now", NULL };
-static const char *bitwarden[]  = { "/home/oliver/scripts/dmenu/bitwarden-dmenu", NULL };
-
 static const char *upbrightness[]   = { "/home/oliver/scripts/dwm/dwm-brightness", "up", NULL };
 static const char *downbrightness[] = { "/home/oliver/scripts/dwm/dwm-brightness", "down", NULL };
 
@@ -172,15 +168,12 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_c,      quit,           {0} },
-	{ MODKEY,                       XK_x,      spawn,          {.v = bitwarden} },
-	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = shutdown} },
 	{ 0,            XF86XK_MonBrightnessUp,    spawn,          {.v = upbrightness } },
 	{ 0,            XF86XK_MonBrightnessDown,  spawn,          {.v = downbrightness } },
 	{ 0,            XF86XK_AudioRaiseVolume,   spawn,          {.v = upvolume } },
 	{ 0,            XF86XK_AudioLowerVolume,   spawn,          {.v = downvolume } },
 	{ 0,            XF86XK_AudioMute,          spawn,          {.v = mutevolume } },
 	{ 0,            XF86XK_AudioMicMute,       spawn,          {.v = mutemic } },
-	{ 0,            XF86XK_Display,            spawn,          {.v = displaysel } },
 	{ 0,            XK_Print,		   spawn,          {.v = screenshot } },
 };
 
