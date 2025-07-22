@@ -100,7 +100,7 @@ static const char *termcmd[]  = { "st", NULL };
 
 static const char *displaysel[]  = { "/home/oliver/scripts/dmenu/displayselect", NULL };
 static const char *bitwarden[]  = { "/home/oliver/scripts/dmenu/bitwarden-dmenu", NULL };
-static const char *prompt[]  = { "/home/oliver/scripts/dmenu/prompt", "Do you want to shutdown?", "shutdown -h now", NULL };
+static const char *shutdown[]  = { "/home/oliver/scripts/dmenu/prompt", "Do you want to shutdown?", "shutdown -h now", NULL };
 
 static const char *upbrightness[]   = { "/home/oliver/scripts/dwm/dwm-brightness", "up", NULL };
 static const char *downbrightness[] = { "/home/oliver/scripts/dwm/dwm-brightness", "down", NULL };
