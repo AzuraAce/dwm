@@ -27,7 +27,7 @@ static const char *colors[][3]      = {
 static const char *const autostart[] = {
 	"xautolock", "-time", "5", "-locker", "xset dpms force off && slock", "-detectsleep", "-corners", "'++--'", "-cornerdelay", "5", "-notify", "5", "-notifier", "/home/oliver/scripts/slock/lock-screen-noti.sh", NULL,
 	"picom", NULL,
-	"feh", "--bg-fill", "-z", "/home/oliver/wallpapers/gdCUUnB.jpeg", NULL,
+	// "feh", "--bg-fill", "-z", "/home/oliver/wallpapers/gdCUUnB.jpeg", NULL,
 	"dwmblocks", NULL,
 	NULL /* terminate */
 };
