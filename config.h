@@ -11,11 +11,11 @@ static const unsigned int gappov    = 30;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "GoogleSansCode-Regular:pixelsize=30:antialias=true:autohint=true",
+static const char *fonts[]          = { "Hack:pixelsize=30:antialias=true:autohint=true",
     "HackNerdFontMono-Regular:pixelsize=30:antialias=true:autohint=true",
     "DejaVuSansMono:pixelsize=30:antialias=true:autohint=true",
 }; /* CozetteVector (old-school font) */
-static const char dmenufont[]       = "monospace:size=12";
+static const char dmenufont[]       = "PT Sans:size=12";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -28,10 +28,6 @@ static const char *colors[][3]      = {
 };
 
 static const char *const autostart[] = {
-	"xautolock", "-time", "5", "-locker", "xset dpms force off && slock", "-detectsleep", "-corners", "'++--'", "-cornerdelay", "5", "-notify", "5", "-notifier", "/home/oliver/scripts/slock/lock-screen-noti.sh", NULL,
-	"picom", NULL,
-	"feh", "--bg-scale", "-z", "/home/oliver/wallpapers/9e477656f61fa831ede282bf8fe73c81.jpeg", NULL, 
-	"dwmblocks", NULL,
 	NULL /* terminate */
 };
 
