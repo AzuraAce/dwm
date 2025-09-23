@@ -11,7 +11,8 @@ static int smartgaps          = 0;        /* 1 means no outer gap when there is 
 static int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char *fonts[]          = { "monospace:size=10" };
+static char font[]            = "monospace:size=10";
+static const char *fonts[]    = { font };
 static char dmenufont[]       = "monospace:size=10";
 static char normbgcolor[]     = "#222222";
 static char normbordercolor[] = "#444444";
@@ -76,7 +77,7 @@ static const char *termcmd[]  = { "st", NULL };
  * Xresources preferences to load at startup
  */
 ResourcePref resources[] = {
-        { "font",               STRING,  &fonts[0] },
+        { "font",               STRING,  &font },
         { "fontalt0",           STRING,  &fonts[1] },
 		{ "dmenufont",          STRING,  &dmenufont },
 		{ "normbgcolor",        STRING,  &normbgcolor },
