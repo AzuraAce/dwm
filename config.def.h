@@ -101,6 +101,7 @@ ResourcePref resources[] = {
         { "swallowfloating",	INTEGER, &swallowfloating },
 };
 
+#include <X11/XF86keysym.h>
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
