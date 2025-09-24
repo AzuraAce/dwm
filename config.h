@@ -71,7 +71,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
-static const char *dmenuj4[]  = { "j4-dmenu-desktop", "--dmenu", "dmenu -i -c -l 10", NULL };
+static const char *dmenuj4[]  = { "j4-dmenu-desktop", "--dmenu", "dmenu -i -c -l 10", "--term", "st", NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const char *screenshot[] = { "/bin/sh", "-c", "maim -s ~/screenshots/$(date +%d-%m-%Y_%H:%M:%S)_screenshot.png", NULL };
@@ -140,6 +140,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_n,      spawn,          SHCMD("~/scripts/dwm/dwm_notes") },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
