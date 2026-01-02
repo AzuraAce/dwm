@@ -12,7 +12,12 @@ static int swallowfloating    = 0;        /* 1 means swallow floating windows by
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static char font[]            = "monospace:size=10";
-static const char *fonts[]    = { font };
+static char font2[]           = "monospace:size=10";
+static const char *fonts[]    = { 
+    font,
+    font2
+};
+
 static char dmenufont[]       = "monospace:size=10";
 static char normbgcolor[]     = "#222222";
 static char normbordercolor[] = "#444444";
@@ -78,7 +83,7 @@ static const char *termcmd[]  = { "st", NULL };
  */
 ResourcePref resources[] = {
         { "font",               STRING,  &font },
-        { "fontalt0",           STRING,  &fonts[1] },
+        { "fontalt0",           STRING,  &font2 },
 		{ "dmenufont",          STRING,  &dmenufont },
 		{ "normbgcolor",        STRING,  &normbgcolor },
 		{ "normbordercolor",    STRING,  &normbordercolor },
