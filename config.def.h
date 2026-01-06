@@ -12,7 +12,7 @@ static int swallowfloating    = 0;        /* 1 means swallow floating windows by
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static char font[]            = "monospace:size=14";
-static char font2[]           = "";
+static char font2[]           = "monospace:size=14";
 static const char *fonts[]    = { 
     font,
     font2
